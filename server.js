@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
-    res.json(databaseNotes);
+    res.json(databaseNotes.slice(1));
 });
 
 app.get('/', (req, res) => {
