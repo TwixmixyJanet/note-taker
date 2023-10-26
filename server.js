@@ -7,7 +7,7 @@ const databaseNotes = require('./db/db.json');
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
@@ -67,9 +67,6 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.info(`Server is running on http://localhost:${PORT} ! LAUNCH!`);
+    console.info(`Server is running on => http://localhost:${PORT} <= LAUNCH!`);
 });
-
-
-// WORK IN PROGRESS:
 
