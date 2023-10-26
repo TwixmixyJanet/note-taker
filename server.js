@@ -26,7 +26,7 @@ app.get('/api/notes', (req, res) => {
     res.json(databaseNotes.slice(1));
 });
 
-generateNewNote(body, notesArray) {
+generateNewNote = (body, notesArray) => {
     const newNote = body;
     if (!Array.isArray(notesArray))
         notesArray = [];
@@ -42,3 +42,4 @@ generateNewNote(body, notesArray) {
 
     return newNote;
 }
+
