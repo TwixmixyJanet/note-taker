@@ -10,10 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
-app.get('/api/notes', (req, res) => {
-    res.json(databaseNotes.slice(1));
-});
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
@@ -25,6 +21,27 @@ app.get('/', (req, res) => {
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
+
+app.post('/api/notes', (req, res) => {
+    const newNote = createNewNote(req.body, allNotes);
+    res.json(newNote);
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+    deleteNote(req.params.id, allNotes);
+    res.json(true);
+});
+
+app.listen(PORT, () => {
+    console.info(`Server is running on port ${PORT}! LAUNCH!`);
+});
+
+
+// WORK IN PROGRESS:
+
+// app.get('/api/notes', (req, res) => {
+//     res.json(databaseNotes.slice(1));
+// });
 
 // createNewNote = (body, notesArray) => {
 //     const newNote = body;
@@ -55,17 +72,3 @@ app.get('/notes', (req, res) => {
 //         }
 //     }
 // }
-
-app.post('/api/notes', (req, res) => {
-    const newNote = createNewNote(req.body, allNotes);
-    res.json(newNote);
-});
-
-app.delete('/api/notes/:id', (req, res) => {
-    deleteNote(req.params.id, allNotes);
-    res.json(true);
-});
-
-app.listen(PORT, () => {
-    console.info(`Server is running on port ${PORT}! LAUNCH!`);
-});
