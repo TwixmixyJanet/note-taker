@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
-    res.json(databaseNotes.slice(1));
+    res.json(databaseNotes);
 });
 
 app.get('/', (req, res) => {
@@ -57,17 +57,17 @@ deleteNote = (id, notesArray) => {
 }
 
 app.post('/api/notes', (req, res) => {
-    const newNote = createNewNote(req.body, allNotes);
+    const newNote = createNewNote(req.body, databaseNotes);
     res.json(newNote);
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-    deleteNote(req.params.id, allNotes);
+    deleteNote(req.params.id, databaseNotes);
     res.json(true);
 });
 
 app.listen(PORT, () => {
-    console.info(`Server is running on http://localhost:${PORT}! LAUNCH!`);
+    console.info(`Server is running on http://localhost:${PORT} ! LAUNCH!`);
 });
 
 
