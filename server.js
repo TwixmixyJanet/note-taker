@@ -55,3 +55,13 @@ removeNote = (id, notesArray) => {
         }
     }
 }
+
+app.post('/api/notes', (req, res) => {
+    const newNote = generateNewNote(req.body, allNotes);
+    res.json(newNote);
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+    removeNote(req.params.id, allNotes);
+    res.json(true);
+});
