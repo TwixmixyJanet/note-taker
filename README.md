@@ -78,14 +78,14 @@ For me, this is when it begins to get exciting. One of my favorite aspects was t
 #### 2. ExpressJS
 This is a new NPM that adds a layer on top of NodeJS to help manage servers and routes. Express is literally used for everything on the server, but I'm highlighting it's import information, middleware, and posting of the PORT.
 <br />
-![lesson 2](/public/assets/img/lesson2.png)
-![lesson 2](/public/assets/img/lesson2b.png)
+![lesson 2](/public/assets/img/lesson2.png)<br />
+![lesson 2](/public/assets/img/lesson2b.png)<br />
 ![lesson 2](/public/assets/img/lesson2c.png)
 
 #### 3. GET / POST / DELETE
 Using ExpressJS enables the ability to manipulate the application through the server file(s). For this I want to highlight the get routes implemented to handle navigating through the app. Specifically the wildcard (*). The wildcard would allow for any random URL off the base URL typed in to renavigate the user to the URL of your choice. Most websites would use this to navigate to the 404 page. Additionally there's the ability to POST. For this app it's being used to create a new note. Then also DELETE is being used to allow for the deleting of a note.
 <br />
-![lesson 3](/public/assets/img/lesson3.png)
+![lesson 3](/public/assets/img/lesson3.png)<br />
 ![lesson 3](/public/assets/img/lesson3b.png)
 
 #### 4. Heroku
