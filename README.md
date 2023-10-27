@@ -1,4 +1,42 @@
-# NOTE TAKER
+# JANET'S NOTE TAKER APP
+
+### [View Project Here](https://powerful-sands-89048-f5ddf490c9b5.herokuapp.com/ "JANET'S NOTE TAKER APP")<br />
+![image of JANET'S NOTE TAKER APP](assets/img/projectimage.png "image of JANET'S NOTE TAKER APP")
+| Technology Used    | Resource URL |
+| --------  | ------- |
+| NodeJS      | https://nodejs.org/en |
+| Express | https://www.npmjs.com/package/express |
+| FS      | https://nodejs.org/api/fs.html |
+| Path     | https://www.npmjs.com/package/path |
+| Heroku | https://www.heroku.com/ |
+| JavaScript | https://developer.mozilla.org/en-US/docs/Web/JavaScript |
+| Git       | https://git-scm.com/ |
+| GitHub     | https://github.com/ |
+| VSCode    | https://code.visualstudio.com/ |
+
+
+## Table of Contents
+
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+## Description:
+This note taker app can be used to collect all of your thoughts, feelings, and very important blobs of information.<br />
+<br />
+
+#### How to use this app:
+
+* Click the link above "View Project Here"
+* Click the "Get Started" button
+* Type a title into the title field
+* Type text into the text field
+* Click the "Save Note" button, or click the "Clear Form" button to reset the note
+* Add as many notes as needed
+* Use the trash bin icon to delete any notes needing to be removed
+* Data will remain updated to your needs. Refresh to check!
 
 ## User Story
 
