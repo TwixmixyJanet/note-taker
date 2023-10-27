@@ -2,6 +2,7 @@ const PORT = process.env.PORT || 3001;
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const uuidv1 = require('uuid/v1');
 const databaseNotes = require('./db/db.json');
 
 const app = express();
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
-    res.json(databaseNotes.slice(1));
+    res.json(databaseNotes);
 });
 
 app.get('/', (req, res) => {
@@ -28,14 +29,8 @@ app.get('*', (req, res) => {
 
 createNewNote = (body, notesArray) => {
     const newNote = body;
-    if (!Array.isArray(notesArray))
-        notesArray = [];
 
-    if (notesArray.length === 0)
-        notesArray.push(0);
-
-    body.id = notesArray[0];
-    notesArray[0]++;
+    body.id = uuidv1();
 
     notesArray.push(newNote);
     fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify(notesArray, null, 2));
@@ -69,4 +64,3 @@ app.delete('/api/notes/:id', (req, res) => {
 app.listen(PORT, () => {
     console.info(`Server is running on => http://localhost:${PORT} <= LAUNCH!`);
 });
-
